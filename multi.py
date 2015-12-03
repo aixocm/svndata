@@ -20,19 +20,22 @@ while True:
         continue
     if num == '1':
         print Province[num],':'
-        print HeB_list.keys()
-        key = raw_input('please input number:')
+		for k,v in HeB_list_num.items():
+			print k,v
+		key = raw_input('please input number:')
         print HeB_list[HeB_list_num[key]]
 		
     if num == '2':
         print Province[num],':'
-        print HeN_list.keys()
+		for k,v in HeN_list_num.items():
+			print k,v
         key = raw_input('please input number:')
         print HeN_list[HeN_list_num[key]]
 		
     if num == '3':
         print Province[num],':'
-        print HuN_list.keys()
+		for k,v in HuN_list_num.items():
+			print k,v
         key = raw_input('please input number:')
         print HuN_list[HuN_list_num[key]]
 		
