@@ -10,7 +10,7 @@ for i in k:
     user_money=int(i.split(':')[2].strip())
     user_dict[user_name]={user_passwd:user_money}
 for i in user_dict.keys():
-    print i,user_dict[i].keys()[0],user_dict[i].values()[0]
+    print "你的用户名:%s 密码为:%s 当前可用余额:%s" % (i,user_dict[i].keys()[0],user_dict[i].values()[0])
 flag=1
 while flag:
     global name
@@ -66,6 +66,7 @@ while flag:
                 print "此次你购买的商品名单和数量为:"
                 for thing in  buyed.keys():
                     print thing,buyed[thing]
+                print "您的余额还剩%d" % user_money_sum
                 flag=0
                 break
             if result == 'n':
