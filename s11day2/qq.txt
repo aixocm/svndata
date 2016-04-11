@@ -1,0 +1,14 @@
+(dp0
+S'alex'
+p1
+S'fsffsdfs'
+p2
+sS'KKK'
+p3
+S'BB'
+p4
+sS'MYSQL'
+p5
+S'DBA'
+p6
+s.

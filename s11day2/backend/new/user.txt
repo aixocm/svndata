@@ -1,0 +1,8 @@
+(dp0
+S'JJ'
+p1
+(lp2
+S'bb0841b7b87059c95ac7f3444db2cb99'
+p3
+aF4491.0
+as.
