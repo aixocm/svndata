@@ -1,0 +1,22 @@
+.header{
+    height: 40px;
+    background-color: orange;
+}
+.body{
+    background-color: #dddddd;
+}
+    .body .menu{
+        z-index: 1;
+        background-color: green;
+        float: left;
+        width: 20%;
+        height: 700px;
+        float:left;
+        z-index: 1;
+    }
+    .body .content{
+        background-color: darkslategray;
+        float: left;
+        width: 80%;
+        height: 700px;
+    }

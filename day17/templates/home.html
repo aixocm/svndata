@@ -1,0 +1,21 @@
+{%  load xx %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>MY home ,welcome!</h1>
+<h2>{{ name | upper }}</h2>
+<h3>{{  sex  }}</h3>
+<ul>
+    {%  for item in user_list %}
+    <li>{{ item }},{{ forloop.first }}</li>
+    {% endfor  %}
+</ul>
+<h1>asdasd</h1>
+{%my_simple_time 1 2 3%}
+{%my_input 'id_username' 'hide'%}
+</body>
+</html>
