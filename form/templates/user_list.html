@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/user_list/" method="post">
+{#    <input type="text" name="host"/>#}
+{#     <input type="text" name="port"/>#}
+{#    <input type="text" name="email"/>#}
+{#    <input type="text" name="mobile"/>#}
+    <p>用户类型: {{ obj.user_type }}<span>{{ errors.user_type }}</span></p>
+    主机：{{ obj.host }} <span> {{ errors.host }}</span><p>
+    端口：{{ obj.port }}<p><span> {{ errors.port }}</span>
+    邮箱：{{ obj.email }}<p><span> {{ errors.email }}</span>
+    手机：{{ obj.mobile }}<p><span> {{ errors.mobile }}</span>
+    备注：{{ obj.memo }}<p><span> {{ errors.memo }}</span>
+  <input type="submit" value="submit"/>
+</form>
+<input type="button" onclick="AjaxSubmit();" value = "Ajax提交" />
+<input type="button" onclick="AjaxSubmitSet();" value = "Ajax提交集合" />
+<table border="1">
+    <thead>
+    <tr>
+        <th>主机名</th>
+        <th>端口</th>
+    </tr>
+    </thead>
+    <tbody id="tbd">
+    <tr>
+        <td>1.1.1.1</td>
+        <td>99988</td>
+    </tr>
+    <tr>
+        <td>1.1.1.2</td>
+        <td>99999</td>
+    </tr>
+    </tbody>
+</table>
+<script src="/static/jquery-2.1.4.min.js"></script>
+<script>
+    function  AjaxSubmit(){
+        var host = "1.1.1.2";
+        var port = 99999;
+        $.ajax({
+            url:"/ajax_data/",
+            type:"POST",
+            data:{h:host,p:port},
+            success: function(arg){
+            }
+        });
+    }
+    function AjaxSubmitSet(){
+        var array_users = [
+            {'username':'alex','age':18},
+            {'username':'JJ','age':28},
+            {'username':'AA','age':28},
+        ];
+          $.ajax({
+            url:"/ajax_data_set/",
+            type:"POST",
+            tradition:true,
+            data:{data:JSON.stringify(array_users)},
+            success: function(arg){
+                //json.loads
+                var callback_dict = $.parseJSON(arg);
+                if (callback_dict.status){
+                    alert('成功');
+                }else{
+                    alert(callback_dict.error);
+                }
+
+            }
+        });
+    }
+</script>
+</body>
+</html>
