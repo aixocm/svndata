@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/create_user/" method="post">
+<p>{{ obj.username }}</p>
+{#<p>{{ obj.user_group }}</p>第一，第二种方法#}
+<p>{{ obj.user_group_id }}</p>
+<input type="submit" value="submit"/>
+</form>
+<table>
+
+    {% for item in user_list %}
+    <tr>
+        <td>{{ item.username }}</td>
+        <td>{{ item.user_group.caption }}</td>  {#外键对应的是一个对象，可以取数据#}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
