@@ -1,0 +1,21 @@
+.left-content-panel{
+    border: 2px solid crimson;
+}
+.right-sidebar{
+    border: 2px solid black;
+}
+.article-head-img{
+    /*float: left;*/
+
+}
+.article-summary{
+    /*float: left;*/
+    margin-left: 35px;
+}
+.article-box {
+    margin-bottom: 20px;
+}
+.article-head-img img{
+    height: 125px ;
+    width: 200px;
+}

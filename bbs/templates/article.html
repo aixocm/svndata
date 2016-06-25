@@ -1,0 +1,6 @@
+{% extends 'index.html' %}
+{% block  page-container %}
+<div class="article-detail"></div>
+<h4>{{ article_obj.title }}</h4>
+    <p>{{ article_obj.content|safe }}</p>
+{% endblock %}
