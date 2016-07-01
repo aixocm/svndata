@@ -1,0 +1,30 @@
+#_*_coding:utf-8_*_
+__author__ = 'jieli'
+import threading
+import time
+
+def run(num):
+    if not num == 5:
+        time.sleep(2)
+    print 'Hi, I am thread %s..lalala\n' % num
+    lock.acquire()
+    res_list2.append(num)
+    lock.release()
+res_list = []
+res_list2 = []
+lock = threading.Lock()
+
+for i in range(10):
+    t = threading.Thread(target=run,args=(i,))
+    t.start()
+
+    res_list.append(t)
+
+#loop thread list
+for i in res_list: #等待所有线程执行完毕主线程再往下走。。。。
+    i.join()
+
+#main = threading.Thread(target=run,args=('I am the main!',))
+#main.setDaemon(True)
+#main.start()
+print '-------',res_list2
